@@ -208,7 +208,7 @@ console.log(findUnique(wordArr10))
 
 const twoDimArr1 = [
             [1, 2, 15],
-            [22, 3, 8],
+            [10, 3, 8],
             [5, 12, 9]
 ] 
 
@@ -226,16 +226,29 @@ const twoDimArr1 = [
 // }
 
 // ------------- Arrow function -------------
+// let maxTwoDimArray = (matrix) => {
+//     let biggestNum = 0;
+//     for (let i = 0; i < matrix.length; i++) {
+//       for (let j = 0; j < matrix[i].length; j++) {
+//         if (matrix[i][j] > biggestNum) {
+//           biggestNum = matrix[i][j];
+//         }
+//       }
+//     }
+//     return biggestNum;
+// }
+
 let maxTwoDimArray = (matrix) => {
     let biggestNum = 0;
-    for (let i = 0; i < matrix.length; i++) {
-      for (let j = 0; j < matrix[i].length; j++) {
-        if (matrix[i][j] > biggestNum) {
-          biggestNum = matrix[i][j];
-        }
-      }
-    }
+    matrix.forEach((array) => {
+        array.forEach((element) => {
+            if (element > biggestNum) {
+                biggestNum = element;
+            }
+        })
+    })
     return biggestNum;
 }
+
 
 console.log(maxTwoDimArray(twoDimArr1));
