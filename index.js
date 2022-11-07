@@ -203,15 +203,39 @@ let findUnique = (wordsArr) => {
 
 console.log(findUnique(wordArr10))
 
+
 // Ejercicio 11: Encontrar el máximo en un array de dos dimensiones
 
-/* Ejemplo: 
 const twoDimArr1 = [
-            [1, 2, 3],
-            [4, 3, 8],
+            [1, 2, 15],
+            [22, 3, 8],
             [5, 12, 9]
-            ] */
+] 
 
-function maxTwoDimArray(matrix) {
-  // your code
+// ------------- Traditional function -------------
+// function maxTwoDimArray(matrix) {
+//     let biggestNum = 0;
+//     for (let i = 0; i < matrix.length; i++) {
+//       for (let j = 0; j < matrix[i].length; j++) {
+//         if (matrix[i][j] > biggestNum) {
+//           biggestNum = matrix[i][j];
+//         }
+//       }
+//     }
+//     return biggestNum;
+// }
+
+// ------------- Arrow function -------------
+let maxTwoDimArray = (matrix) => {
+    let biggestNum = 0;
+    for (let i = 0; i < matrix.length; i++) {
+      for (let j = 0; j < matrix[i].length; j++) {
+        if (matrix[i][j] > biggestNum) {
+          biggestNum = matrix[i][j];
+        }
+      }
+    }
+    return biggestNum;
 }
+
+console.log(maxTwoDimArray(twoDimArr1));
